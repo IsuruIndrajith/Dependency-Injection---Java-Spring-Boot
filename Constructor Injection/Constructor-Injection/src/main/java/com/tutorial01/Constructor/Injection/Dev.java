@@ -1,7 +1,9 @@
 package com.tutorial01.Constructor.Injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Dev {
 
     private Laptop laptop;
@@ -9,6 +11,7 @@ public class Dev {
 //    this is called as constructor injection
 
     public Dev(Laptop laptop){
+
         this.laptop = laptop;
     }
     public void build(){

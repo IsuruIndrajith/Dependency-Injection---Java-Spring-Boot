@@ -1,7 +1,9 @@
 package com.tutorial01.Setter.Injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Dev {
 
     private Laptop laptop;
@@ -13,6 +15,6 @@ public class Dev {
     }
 
     public void build(){
-
+laptop.compile();
     }
 }

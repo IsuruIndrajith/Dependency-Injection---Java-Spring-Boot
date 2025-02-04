@@ -1,0 +1,19 @@
+learn the dependency injection,
+
+When using Java spring boot, the objects of the classes that we want to handled by the spring should be created in the in the IOC container which is inside the JVM. Here as of the first image,
+(1) - SpringApplication.run create that IOC container  
+as the .run method returns the objects o the IOC container
+"ApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);"
+this line makes the IOC available for the spring.
+
+by the @Component in the Dev.java class its objects have been created inside the IOC container, and in the main method that object have been called next a method of the Dev class has been called,
+
+
+
+imagine depending one class on another class in spring boot, we can connect these classes like the above Application context method, but as a more practical solution, We can use @Autowiring.(3) here before making the reference of the required class using the @Autowired annotation the two classes have been connected. Using Autowired like this is called as Field injection which is a type of the Dependency injection.
+
+another method of using dependency injection is the constructor injection. here, inside a class the reference of the other class is passed as a constructor. Here @Autowiring is optional.
+
+Another way of dependency injection is the use of setter injection. Here like the above method, a setter function of the required class is build inside of another class which sets its private reference to the setter function created class. By default the setter will not use Autowiring like the constructor injection, therefore we have to use it.
+
+next imagine a situation that two classes that extends a common interface (From the example, Desktop and Laptop) are called in a common class from the interface name. Here we want to specify which bean we are calling because the two classes objects have created in the IOC container. This is done by @Qualifier annotation or the @Primary annotation, and it is done as shown in the figure.
